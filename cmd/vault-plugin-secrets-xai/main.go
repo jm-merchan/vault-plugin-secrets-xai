@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/vault/api"
 	"github.com/hashicorp/vault/sdk/plugin"
 
-	xaisecrets "github.com/lumen-demo/vault-plugin-secrets-xai/plugin"
+	xaisecrets "github.com/jm-merchan/vault-plugin-secrets-xai/plugin"
 )
 
 func main() {
