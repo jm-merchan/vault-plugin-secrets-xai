@@ -1,0 +1,14 @@
+bin/
+docker/dist/
+*.test
+coverage.out
+.DS_Store
+*.exe
+*.dll
+*.so
+*.dylib
+.env
+.env.*
+!.env.example
+*.pem
+*.key

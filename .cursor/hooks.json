@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": ".cursor/hooks/pr-session-context.sh",
+        "timeout": 15
+      }
+    ],
+    "beforeShellExecution": [
+      {
+        "command": ".cursor/hooks/pr-shell-guard.sh",
+        "matcher": "git\\s+|gh\\s+pr\\s+",
+        "failClosed": false,
+        "timeout": 10
+      }
+    ],
+    "stop": [
+      {
+        "command": ".cursor/hooks/pr-stop-followup.sh",
+        "loop_limit": 1,
+        "timeout": 20
+      }
+    ]
+  }
+}
