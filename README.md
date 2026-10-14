@@ -32,8 +32,6 @@ Create the key in the xAI Console under **Settings → Management Keys**. The pl
 | Models | No access |
 | Users & Teams | No access |
 
-The console pre-fills **Allowed IP Address** with `127.0.0.1/32`. Clear that default before saving. It only accepts calls from that host, so Vault running in Minikube cannot use the key. Leave the list empty.
-
 An inference API key cannot be used here. The Management API rejects it with `Invalid bearer token. Please ensure you use a valid management key.`
 
 ## Build
@@ -44,7 +42,7 @@ make build
 
 The binary is written to `bin/vault-plugin-secrets-xai`.
 
-This repository is independent of the Okta/Vault lab. For PR workflow conventions and Cursor hooks, see [CONTRIBUTING.md](CONTRIBUTING.md).
+For PR workflow conventions and Cursor hooks, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Docker images
 
