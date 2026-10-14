@@ -1,4 +1,4 @@
-module github.com/lumen-demo/vault-plugin-secrets-xai
+module github.com/jm-merchan/vault-plugin-secrets-xai
 
 go 1.26.5
 

@@ -37,11 +37,12 @@ An inference API key cannot be used here. The Management API rejects it with `In
 ## Build
 
 ```bash
-cd vault-plugin-secrets-xai
 make build
 ```
 
 The binary is written to `bin/vault-plugin-secrets-xai`.
+
+This repository is independent of the Okta/Vault lab. For PR workflow conventions and Cursor hooks, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Docker images
 
