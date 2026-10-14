@@ -153,7 +153,9 @@ api_key_id         ...
 name               vault-lumen-abcd1234
 ```
 
-When the lease expires or is revoked, the plugin calls `DELETE /auth/api-keys/{apiKeyId}`.
+When the lease expires or is revoked, the plugin calls `DELETE /auth/api-keys/{apiKeyId}`. In the xAI console, expired keys briefly show as **Initializing…** (with the calendar/expiry icon) under names matching the role template, for example `vault-lumen-<suffix>`:
+
+![xAI console showing vault-issued API keys as Initializing after lease expiry](docs/images/xai-console-lease-expiry.png)
 
 `vault read xai/config` does not return the management key.
 
