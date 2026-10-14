@@ -4,6 +4,8 @@ HashiCorp Vault secrets engine that issues short-lived xAI/Grok inference API ke
 
 The plugin creates a key when you read `xai/creds/:role` and deletes it when the Vault lease expires. It does not rotate the management key: xAI only lets you create those keys from the console.
 
+Inspired by [Ricardo Oliveira](https://github.com/gitrgoliveira)'s [Vault OpenAI secrets plugin](https://github.com/gitrgoliveira/vault-plugin-secrets-openai): that project showed how to drive dynamic LLM API keys from Vault leases, and this plugin extends the same pattern to xAI (team-scoped keys, Management API ACLs/rate limits, propagation checks, and no admin-key rotation because xAI management keys are console-only).
+
 Tested as an external (binary) plugin. HashiCorp does not officially support this plugin.
 
 ## Requirements
@@ -177,6 +179,8 @@ When the lease expires or is revoked, the plugin calls `DELETE /auth/api-keys/{a
 | `set_native_expiry` | `true` | Sends `expireTime` to xAI matching the Vault TTL |
 
 ## Differences from the OpenAI plugin
+
+Compared with [gitrgoliveira/vault-plugin-secrets-openai](https://github.com/gitrgoliveira/vault-plugin-secrets-openai):
 
 - There are no per-project service accounts: keys belong to the team.
 - There is no root credential rotation (`config/rotate`): management keys are created only in the console.
